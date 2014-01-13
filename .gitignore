@@ -1,0 +1,5 @@
+# Don't remove this, but don't track it.
+variables.yml
+
+# This is built on initial 'vagrant up' so no need to ship with it.
+.vagrant/
