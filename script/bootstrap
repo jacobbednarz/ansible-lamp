@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# Run a
+set -e
+VARIABLE_FILE=$(pwd)/variables.yml
+
+echo
+echo "What would you like the MySQL username to me?"
+read MYSQL_USERNAME
+echo
+echo "What password do you want to set for $MYSQL_USERNAME?"
+read MYSQL_PASSWORD
+echo
+echo "What do you want to name the database?"
+read MYSQL_DATABASE
+echo
+echo "Writing your variables configuration file..."
+cat > $VARIABLE_FILE <<EOL
+---
+mysql_username: $MYSQL_USERNAME
+mysql_password: $MYSQL_PASSWORD
+mysql_database_name: $MYSQL_DATABASE
+EOL
+echo "Configuration file has been successfully written."
+echo
+echo "Run `vagrant up` to get started."
